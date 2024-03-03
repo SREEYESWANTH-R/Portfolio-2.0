@@ -9,10 +9,19 @@
     
 }
 
+.nav-header>div{
+    font-weight: 700;
+}
+
 .nav-list{
     display: flex;
     list-style: none;
     width: 400px;
     justify-content: space-between;
     align-items: center;
+}
+
+.nav-items>div{
+    background-color: aqua;
+    width:20px;
 }
