@@ -11,6 +11,11 @@
     flex: 1;
 }
 
+
+.hero-info h1 span{
+    color: rgb(255, 0, 76);
+}
+
 .hero-img{
     flex: 1;
 }
