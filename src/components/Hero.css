@@ -1,5 +1,5 @@
 .hero-container{
-     padding: 100px 60px;
+     padding: 100px 100px;
      font-family: Poppins;
      display: flex;
      justify-content: space-between;
@@ -22,7 +22,7 @@
 
 .hero-img{
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .image-circle{

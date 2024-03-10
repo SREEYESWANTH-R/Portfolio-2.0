@@ -1,0 +1,16 @@
+.main-cardBody{
+    text-align: center;
+    font-family: Poppins;
+    padding: 30px 60px;
+}
+
+.main-cardBody>h1{
+    margin-bottom: 20px;
+}
+
+.cards{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:90px;
+}

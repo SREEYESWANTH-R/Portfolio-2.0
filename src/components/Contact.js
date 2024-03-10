@@ -34,6 +34,7 @@ function Contact(){
                           onChange={(e)=>setName(e.target.value)}
                           />
                         <TextField 
+                          required
                           fullWidth
                           id="outlined-basic" 
                           label="Email" 
