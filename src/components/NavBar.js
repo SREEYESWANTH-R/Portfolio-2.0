@@ -6,9 +6,9 @@ function NavBar(){
     <header className='nav-header'>
         <div>Portfolio</div>
         <ul className='nav-list'>
-            <li className='nav-items'>About</li>
-            <li className='nav-items'>Projects</li>
-            <li className='nav-items'>ContactUs</li>
+            <li className='nav-items'><a href="#">About</a></li>
+            <li className='nav-items'><a href="#">Projects</a></li>
+            <li className='nav-items'><a href="#">Contact</a></li>
         </ul>
     </header>
   )

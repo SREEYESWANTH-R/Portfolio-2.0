@@ -1,5 +1,6 @@
 import React from 'react'
 import './Hero.css'
+import {Button} from '@mui/material'
 import HeroImg from '../assests/hero-img-modified.jpeg'
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -22,7 +23,7 @@ function Hero(){
             <a href=''><InstagramIcon fontSize="large" style={{ color: 'rgb(255, 0, 76)' }} /></a>
         </div>
         <div className='hero-btn'>
-            
+            <Button variant="outlined" style={{color:"rgb(255, 0, 76)", fontWeight:"600", border:"1px solid rgb(255, 0, 76)"}}>Download CV</Button>
         </div>
     </div>
     <div className='hero-img'>
