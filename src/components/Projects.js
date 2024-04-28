@@ -6,6 +6,28 @@ import Inter2 from "../../src/assests/inter2.png"
 
 
 function Projects(){
+    const handleSourceCodeDownload = () => {
+        fetch('/download')
+          .then(response => {
+            if (response.ok) {
+              return response.blob();
+            }
+            throw new Error('Network response was not ok.');
+          })
+          .then(blob => {
+            const url = window.URL.createObjectURL(new Blob([blob]));
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'source_code.zip');
+            document.body.appendChild(link);
+            link.click();
+            link.parentNode.removeChild(link);
+          })
+          .catch(error => {
+            console.error('Error downloading source code:', error);
+          });
+      };
+
   return (
     <div className='main-cardBody'>
         <h1>Projects</h1>
@@ -26,7 +48,7 @@ function Projects(){
                 </CardContent>
                 <CardActions>
                 <Button size="small" style={{color:'rgb(255, 0, 76)'}}>Open</Button>
-                <Button size="small" style={{color:'rgb(255, 0, 76)'}}>Source Code</Button>
+                <Button size="small" style={{color:'rgb(255, 0, 76)'}} onClick={handleSourceCodeDownload}>Source Code</Button>
                 </CardActions>
             </Card>
             <Card sx={{ maxWidth: 345 }}>
@@ -45,7 +67,7 @@ function Projects(){
                 </CardContent>
                 <CardActions>
                 <Button size="small" style={{color:'rgb(255, 0, 76)'}}>Open</Button>
-                <Button size="small" style={{color:'rgb(255, 0, 76)'}}>Source Code</Button>
+                <Button size="small" style={{color:'rgb(255, 0, 76)'}} onClick={handleSourceCodeDownload}>Source Code</Button>
                 </CardActions>
             </Card>
             <Card sx={{ maxWidth: 345 }}>
@@ -64,7 +86,7 @@ function Projects(){
                 </CardContent>
                 <CardActions>
                 <Button size="small" style={{color:'rgb(255, 0, 76)'}}>Open</Button>
-                <Button size="small" style={{color:'rgb(255, 0, 76)'}}>Source Code</Button>
+                <Button size="small" style={{color:'rgb(255, 0, 76)'}} onClick={handleSourceCodeDownload}>Source Code</Button>
                 </CardActions>
             </Card>
             <Card sx={{ maxWidth: 345 }}>
@@ -83,7 +105,7 @@ function Projects(){
                 </CardContent>
                 <CardActions>
                 <Button size="small" style={{color:'rgb(255, 0, 76)'}}>Open</Button>
-                <Button size="small" style={{color:'rgb(255, 0, 76)'}}>Source Code</Button>
+                <Button size="small" style={{color:'rgb(255, 0, 76)'}} onClick={handleSourceCodeDownload}>Source Code</Button>
                 </CardActions>
             </Card>
             <Card sx={{ maxWidth: 345 }}>
@@ -102,7 +124,7 @@ function Projects(){
                 </CardContent>
                 <CardActions>
                 <Button size="small" style={{color:'rgb(255, 0, 76)'}}>Open</Button>
-                <Button size="small" style={{color:'rgb(255, 0, 76)'}}>Source Code</Button>
+                <Button size="small" style={{color:'rgb(255, 0, 76)'}} onClick={handleSourceCodeDownload}>Source Code</Button>
                 </CardActions>
             </Card>
             <Card sx={{ maxWidth: 345 }}>
@@ -121,7 +143,7 @@ function Projects(){
                 </CardContent>
                 <CardActions>
                 <Button size="small" style={{color:'rgb(255, 0, 76)'}}>Open</Button>
-                <Button size="small" style={{color:'rgb(255, 0, 76)'}}>Source Code</Button>
+                <Button size="small" style={{color:'rgb(255, 0, 76)'}} onClick={handleSourceCodeDownload}>Source Code</Button>
                 </CardActions>
             </Card>
         </div>

@@ -1,21 +1,27 @@
-import {React, useState} from 'react'
+import {React, useState, useEffect} from 'react'
 import './Contact.css'
 import {TextField, Button} from '@mui/material';
+import axios from "axios";
 
 function Contact(){
 
   const[name, setName] = useState("");
+  const[email, setEmail] = useState("");
   const[feedback, setFeedback] = useState("");
-  const[error, setError] = useState("");
+  // const[error, setError] = useState("");
 
   const handleSubmit = (event) =>{
     event.preventDefault();
-    if(name === ""){
-      setError("Enter valid name");
-    }else{
-      setFeedback(<p><span style={{ color: 'rgb(255, 0, 76)'}}>{name}</span>, Thank you for the response</p>);
-    }
-    
+    axios.post('http://localhost:3000/contact',{
+        name,email,feedback
+    }).then((response)=>{
+      console.log(response);
+    }).catch((error)=>{
+      console.error("enter valid details:", error)
+    }); 
+    setEmail("");
+    setName("");
+    setFeedback("");
   }
 
   return (
@@ -29,7 +35,7 @@ function Contact(){
                           id="outlined-basic" 
                           label="Name" 
                           variant="outlined" 
-                          helperText={error}
+                          helperText=""
                           value={name}
                           onChange={(e)=>setName(e.target.value)}
                           />
@@ -39,7 +45,9 @@ function Contact(){
                           id="outlined-basic" 
                           label="Email" 
                           variant="outlined" 
+                          value = {email}
                           helperText="" 
+                          onChange={(e)=>setEmail(e.target.value)}
                           />
                         <TextField
                             fullWidth
@@ -47,10 +55,12 @@ function Contact(){
                             label="Message"
                             multiline
                             rows={4}
+                            value = {feedback}
+                            onChange={(e)=>setFeedback(e.target.value)}
                         />
                        <Button type="submit" variant="outlined" style={{color: 'rgb(0,0,0)', border:'1px solid rgb(0,0,0)', fontWeight:'700'}}>Submit</Button>
                     </form>
-                    <p id="feedback">{feedback}</p>
+                    {/* <p id="feedback">{feedback}</p> */}
             </div>
             <div className='animation'>
 
